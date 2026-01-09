@@ -1,3 +1,20 @@
-<div class="w-full h-screen bg-indigo-500 flex flex itmes-center justify-center">
-  <h1 class="text-7xl font-semibold text-indigo-50"> Hello Variaty</h1>
+
+<div class="w-full h-screen bg-indigo-500 dark:bg-gray-900 flex items-center justify-center">
+  <h1 class="text-7xl font-semibold text-indigo-50 dark:text-gray-400">
+    Hello Variaty
+  </h1>
+</div>
+
+<div class="absolute top-4 right-4">
+  <%= button_to toggle_theme_path,
+                method: :post,
+                class: "transition hover:scale-110" do %>
+
+    <% if cookies[:theme] == "dark" %>
+      🌙
+    <% else %>
+      ☀️
+    <% end %>
+
+  <% end %>
 </div>
